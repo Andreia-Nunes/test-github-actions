@@ -1,0 +1,23 @@
+name: Continuous Integration
+
+on: push
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Using Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 21.x
+
+      - name: Installing dependencies
+        run: npm install
+
+      - name: Configuration Success
+        run: echo "Configuration done successfully!"
+
